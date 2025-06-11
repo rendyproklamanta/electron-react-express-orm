@@ -6,14 +6,14 @@ const API_URL = 'http://localhost:3000'
 // Types
 
 export interface AuthState {
-   user: User | null
+   user: IUser | null
    token: string | null
    isLoading: boolean
    error: string | null
    isAuthenticated: boolean
 }
 
-interface User {
+interface IUser {
    id: number
    email: string
    name: string
@@ -26,7 +26,7 @@ interface LoginPayload {
 }
 
 interface AuthResponse {
-   user: User
+   user: IUser
    token: string
 }
 
