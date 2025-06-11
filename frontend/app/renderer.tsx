@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import appIcon from '@/resources/build/icon.png'
 import { WindowContextProvider, menuItems } from '@/lib/window'
@@ -7,13 +7,19 @@ import App from './app'
 import './styles/app.css'
 import WelcomeKit from './pages/WelcomeKit'
 import Dashboard from './pages/Dashboard'
-import Charts from './pages/Charts'
 import Table from './pages/Table'
 import ErrorBoundary from './components/ErrorBoundary'
 import LoginPage from './pages/LoginPage'
 import ProtectedRoute from './components/ProtectedRoute'
 import { store } from "./store/store"
 import { Provider } from 'react-redux'
+import MapsPage from './pages/MapsPage'
+import { ChartsWrapper } from './pages/ChartWrapper'
+import { LineChartDemo } from './components/charts/LineChart'
+import { AreaChartDemo } from './components/charts/AreaChart'
+import { BarChartDemo } from './components/charts/BarChart'
+import { ColumnChartDemo } from './components/charts/ColumnChart'
+import { PieChartDemo } from './components/charts/PieChart'
 
 
 ReactDOM.createRoot(document.getElementById('app') as HTMLElement).render(
@@ -25,19 +31,32 @@ ReactDOM.createRoot(document.getElementById('app') as HTMLElement).render(
           titlebar={{ title: 'Electron React App', icon: appIcon, menuItems }}
         >
           <HashRouter>
-            <Routes>
-              <Route path="login" element={<LoginPage />} />
+              <Routes>
 
-              {/* Protected routes */}
-              <Route element={<ProtectedRoute />}>
-                <Route path="/" element={<App />}>
-                  <Route index element={<Dashboard />} />
-                  <Route path="onboarding" element={<WelcomeKit />} />
-                  <Route path="charts" element={<Charts />} />
-                  <Route path="table" element={<Table />} />
+                <Route path="login" element={<LoginPage />} />
+
+                {/* Protected routes */}
+                <Route element={<ProtectedRoute />}>
+                  <Route path="/" element={<App />}>
+                    <Route index element={<Dashboard />} />
+                    <Route path="onboarding" element={<WelcomeKit />} />
+
+                    {/* Grouped Charts Routes under /charts */}
+
+                    <Route path="charts" element={<ChartsWrapper />}>
+                      <Route path="linechart" element={<LineChartDemo />} />
+                      <Route path="areachart" element={<AreaChartDemo />} />
+                      <Route path="barchart" element={<BarChartDemo />} />
+                      <Route path="coloumnchart" element={<ColumnChartDemo />} />
+                      <Route path="piechart" element={<PieChartDemo />} />
+                    </Route>
+
+                    <Route path="table" element={<Table />} />
+                    <Route path="maps" element={<MapsPage />} />
+                  </Route>
                 </Route>
-              </Route>
-            </Routes>
+
+              </Routes>
           </HashRouter>
         </WindowContextProvider>
       </Provider>

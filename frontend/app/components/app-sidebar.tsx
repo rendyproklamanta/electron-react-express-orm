@@ -3,6 +3,7 @@ import {
    AudioWaveform,
    BookOpen,
    Bot,
+   ChartArea,
    Command,
    Frame,
    GalleryVerticalEnd,
@@ -74,31 +75,39 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   url: "/onboarding",
                },
                {
-                  title: "Charts",
-                  url: "/charts",
-               },
-               {
                   title: "Table",
                   url: "/table",
+               },
+               {
+                  title: "Maps",
+                  url: "/maps",
                },
             ],
          },
          {
-            title: "Models",
+            title: "Charts",
             url: "#",
-            icon: Bot,
+            icon: ChartArea,
             items: [
                {
-                  title: "Genesis",
-                  url: "#",
+                  title: "Line Chart",
+                  url: "/charts/linechart",
                },
                {
-                  title: "Explorer",
-                  url: "#",
+                  title: "Area Chart",
+                  url: "/charts/areachart",
                },
                {
-                  title: "Quantum",
-                  url: "#",
+                  title: "Bar Chart",
+                  url: "/charts/barchart",
+               },
+               {
+                  title: "Coloumn Chart",
+                  url: "/charts/coloumnchart",
+               },
+               {
+                  title: "Pie Chart",
+                  url: "/charts/piechart",
                },
             ],
          },

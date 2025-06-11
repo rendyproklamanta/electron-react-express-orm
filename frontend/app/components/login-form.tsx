@@ -42,8 +42,8 @@ export function LoginForm({
 
   useEffect(() => {
     if (isAuthenticated) {
-      const from = location.state?.from?.pathname || "/"
-      navigate(from, { replace: true })
+      // const from = location.state?.from?.pathname || "/"
+      navigate("/", { replace: true })
     }
   }, [isAuthenticated, navigate, location])
 
