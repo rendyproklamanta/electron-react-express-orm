@@ -2,12 +2,12 @@ import * as React from "react"
 import {
    AudioWaveform,
    BookOpen,
-   Bot,
    ChartArea,
    Command,
    Frame,
    GalleryVerticalEnd,
    Map,
+   MapIcon,
    PieChart,
    Settings2,
    SquareTerminal,
@@ -78,9 +78,20 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   title: "Table",
                   url: "/table",
                },
+            ],
+         },
+         {
+            title: "Maps",
+            url: "#",
+            icon: MapIcon,
+            items: [
                {
-                  title: "Maps",
-                  url: "/maps",
+                  title: "GIS Sample 1",
+                  url: "/maps/gis1",
+               },
+               {
+                  title: "GIS Sample 2",
+                  url: "/maps/gis2",
                },
             ],
          },

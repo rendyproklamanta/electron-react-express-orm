@@ -1,11 +1,12 @@
 import { useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import { Outlet, Navigate, useLocation } from "react-router-dom"
 import { checkAuthStatus } from "../store/authSlice"
 import { RootState } from "../store/store"
+import { useAppDispatch } from "../store/hooks"
 
 const ProtectedRoute = () => {
-   const dispatch = useDispatch()
+   const dispatch = useAppDispatch()
    const location = useLocation()
 
    const { isAuthenticated, isLoading } = useSelector(

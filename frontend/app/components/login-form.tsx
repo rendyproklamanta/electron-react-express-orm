@@ -118,10 +118,10 @@ export function LoginForm({
 
                 <Button type="submit" className="w-full">
                   {isLoading ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    <div className="flex items-center justify-items-center">
+                      <Loader2 className="mr-1 h-4 w-4 animate-spin" />
                       Signing in...
-                    </>
+                    </div>
                   ) : (
                     "Sign In"
                   )}
@@ -136,7 +136,7 @@ export function LoginForm({
 
               <div className="text-center text-sm">
                 Don&apos;t have an account?{" "}
-                <Link to="" className="underline underline-offset-4">
+                <Link to="/onboarding" className="underline underline-offset-4">
                   Sign up
                 </Link>
               </div>

@@ -43,24 +43,26 @@ export default function WelcomeKit() {
   return (
     <>
       <Burger breadcrumbs="Onboarding" />
-      <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-        <div className="flex gap-5 items-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={'content-' + activePath}
-              style={{ zIndex: 2, flex: 1 }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{
-                duration: 0.2,
-                ease: 'easeInOut',
-              }}
-            >
-              {content()}
-            </motion.div>
-          </AnimatePresence>
-          <EraShape onPathHover={handlePathHover} onPathReset={handlePathReset} />
+      <div className="@container/main py-4 md:py-6 px-4">
+        <div className="flex flex-1 flex-col gap-4 p-3 pt-0">
+          <div className="flex gap-5 items-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={'content-' + activePath}
+                style={{ zIndex: 2, flex: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  duration: 0.2,
+                  ease: 'easeInOut',
+                }}
+              >
+                {content()}
+              </motion.div>
+            </AnimatePresence>
+            <EraShape onPathHover={handlePathHover} onPathReset={handlePathReset} />
+          </div>
         </div>
       </div>
     </>

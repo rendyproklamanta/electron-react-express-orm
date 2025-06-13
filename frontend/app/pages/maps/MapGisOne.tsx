@@ -237,7 +237,7 @@ function MapControls({ map }: MapControlsProps) {
   )
 }
 
-export default function MapsPage() {
+export default function MapGisOne() {
   const [selectedProvince, setSelectedProvince] = useState<string>("")
   const [selectedKabupaten, setSelectedKabupaten] = useState<string>("")
   const [selectedKecamatan, setSelectedKecamatan] = useState<string>("")
@@ -421,7 +421,7 @@ export default function MapsPage() {
   }
 
   return (
-    <div className="w-full h-screen flex">
+    <div className="w-full h-[95vh] flex">
       {/* Panel Filter */}
       <Card className="w-80 h-full overflow-y-auto">
         <CardHeader>
@@ -614,7 +614,7 @@ export default function MapsPage() {
         {map && <MapControls map={map} />}
 
         {/* Info Panel */}
-        <div className="z-[999] absolute bottom-15 left-4 bg-white p-3 rounded-lg shadow-lg max-w-sm">
+        <div className="z-[999] absolute bottom-4 left-4 bg-white p-3 rounded-lg shadow-lg max-w-sm">
           <h3 className="font-semibold text-gray-600 text-sm mb-2">Petunjuk Penggunaan:</h3>
           <ul className="text-xs space-y-1 text-gray-600">
             <li>• Klik wilayah pada peta untuk zoom</li>

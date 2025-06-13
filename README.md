@@ -10,7 +10,7 @@
 - Swagger
 
 ### Frontend
-- ReactJS + Vite
+- ReactJS + Vite : Typescript
 - ShadcnUI
 - Tailwind
 - Redux-toolkit
